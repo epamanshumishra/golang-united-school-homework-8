@@ -134,7 +134,7 @@ func addUser(item string, fileName string, writer io.Writer) error {
 
 	for _, v := range allUsers {
 		if v.ID == user.ID {
-			fmt.Fprint(writer, fmt.Sprintf("Id %s already exists", user.ID))
+			fmt.Fprint(writer, fmt.Sprintf("Item with id %s already exists", user.ID))
 			return nil
 		}
 	}
@@ -160,7 +160,7 @@ func removeUser(id string, fileName string, writer io.Writer) error {
 	if len(allUsers) != len(filteredUsers) {
 		return setUsersInFile(filteredUsers, fileName)
 	} else {
-		fmt.Fprint(writer, fmt.Sprintf("Id %s not found", id))
+		fmt.Fprint(writer, fmt.Sprintf("Item with id %s not found", id))
 	}
 
 	return nil
