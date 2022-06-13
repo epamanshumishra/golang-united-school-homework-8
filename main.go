@@ -62,9 +62,9 @@ func Perform(args Arguments, writer io.Writer) error {
 			return missedFlagError(idFlag)
 		}
 		return findUser(id, fileName, writer)
+	default:
+		return fmt.Errorf("Operation %s not allowed!", operation)
 	}
-
-	return fmt.Errorf("Operation %s not allowed!", operation)
 }
 
 func main() {
